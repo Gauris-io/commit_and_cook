@@ -1,0 +1,140 @@
+/* 1. Import softer, handwritten fonts for the cozy feel */
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Kalam:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  /* Earthy, warm parchment background with a subtle "paper" texture */
+  background-color: #f4ece1; 
+  background-image: 
+    linear-gradient(30deg, #ece2d0 12%, transparent 12.5%, transparent 87%, #ece2d0 87.5%, #ece2d0),
+    linear-gradient(150deg, #ece2d0 12%, transparent 12.5%, transparent 87%, #ece2d0 87.5%, #ece2d0),
+    linear-gradient(60deg, #efdfc4 25%, transparent 25.5%, transparent 75%, #efdfc4 75%, #efdfc4);
+  background-size: 80px 140px;
+  background-attachment: fixed;
+  font-family: 'Handlee', cursive; 
+  color: #5d4037; 
+  min-height: 100vh;
+}
+
+/* 2. Centering the App */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 3. The Reddish Sauce-Colored Header */
+.header h1 {
+  color: #a63a2a; /* Soft Reddish Sauce Color */
+  font-family: 'Kalam', cursive;
+  font-size: 4.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+.header p {
+  text-align: center;
+  color: #8d6e63;
+  font-size: 1.2rem;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+
+/* 4. Straight Boxes with Curved Ends (No Shadows) */
+.card {
+  background: #fffdfa; 
+  border: 2px solid #8b5e3c; /* Earthy brown border */
+  border-radius: 30px; /* Clean curved ends */
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: none; /* Shadow removed as requested */
+}
+
+.card h3 {
+  color: #a63a2a; 
+  font-family: 'Kalam', cursive;
+  font-size: 1.8rem;
+  border-bottom: 2px dashed #d7ccc8;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+/* 5. Buttons with pill-shaped ends */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.option-btn {
+  font-family: 'Handlee', cursive;
+  padding: 10px 25px;
+  border: 2px solid #8b5e3c;
+  border-radius: 50px; /* Pill shape */
+  background: #fff;
+  color: #5d4037;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+  background-color: #efebe9;
+}
+
+.option-btn.active {
+  background-color: #a63a2a; /* Matches the header red */
+  color: white;
+  border-color: #a63a2a;
+  transform: scale(1.05); /* Slight pop without shadow */
+}
+
+/* 6. Layout Grid */
+.data-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 25px;
+}
+
+.scroll-box {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+/* 7. Straight & Curved Recipe Cards */
+.recipe-card-inner {
+  background: #ffffff;
+  border: 1px solid #d7ccc8;
+  border-radius: 20px; /* Curved ends */
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: none;
+}
+
+.recipe-card-inner h4 {
+  margin: 0;
+  color: #a63a2a;
+}
+
+.sweet-badge {
+  background: #ffecb3; 
+  color: #5d4037;
+  padding: 2px 12px;
+  border-radius: 20px; /* Pill badge */
+  font-size: 0.8rem;
+  border: 1px solid #8b5e3c;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+/* 8. Nutritional Tags */
+.nutrient-tag {
+  background: #efebe9;
+  border: 1px solid #8b5e3c;
+  padding: 8px 18px;
+  border-radius: 25px; /* Pill shape */
+  font-size: 14px;
+  font-weight: bold;
+}

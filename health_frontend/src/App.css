@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Kalam', cursive; /* Sketchy, handwritten font */
+  background-color: #fdf5e6; /* Old paper color */
+  background-image: radial-gradient(#d7ccc8 1px, transparent 1px);
+  background-size: 20px 20px; /* Subtle grid like a notebook */
+  color: #5d4037;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-size: 4rem;
+  color: #c62828; /* Pizza Sauce Red */
+  text-shadow: 2px 2px #ffccbc;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.card {
+  background: #fffef0;
+  border: 3px solid #5d4037;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* Wobbly hand-drawn border */
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 8px 8px 0px #8d6e63;
+}
+
+.card h3 {
+  color: #ef6c00; /* Crust Orange */
+  border-bottom: 2px dashed #d7ccc8;
+  padding-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.option-btn {
+  font-family: 'Kalam', cursive;
+  padding: 10px 20px;
+  border: 2px solid #5d4037;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.option-btn.active {
+  background-color: #ffd54f; /* Topping Yellow */
+  transform: rotate(-2deg) scale(1.1);
+  box-shadow: 4px 4px 0px #5d4037;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.scroll-box {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.recipe-card-inner {
+  background: #ffffff;
+  border: 2px solid #a1887f;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.recipe-card-inner::before {
+  content: '🍕';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.sweet-badge {
+  background: #ffecb3;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  border: 1px solid #5d4037;
+}
