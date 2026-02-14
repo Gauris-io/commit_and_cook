@@ -112,6 +112,7 @@ body {
 
   /* Warm brown gradient text */
   background: linear-gradient(90deg, #6d4c41, #a63a2a);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
