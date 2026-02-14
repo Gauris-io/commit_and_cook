@@ -1,0 +1,10 @@
+Condition,Molecular Trigger,IUPAC Name,Functional Groups,Common Labels,Heavy Atom Count
+Metabolic Syndrome,Fructose,"1,3,4,5,6-Pentahydroxyhexan-2-one","Ketone, Alcohol (Polyol)","HFCS, Fruit sugar",12
+Type 2 Diabetes,Glucose,"(2R,3S,4R,5R)-2,3,4,5,6-Pentahydroxyhexanal","Aldehyde, Alcohol (Polyol)","Dextrose, Blood sugar",12
+Hypertension,Sodium Glutamate,Sodium 2-aminopentanedioate,"Carboxylate, Amine","MSG, Flavor enhancer",11
+Fatty Liver,Ethanol,Ethanol,Primary Alcohol,"Alcohol, Ethyl Alcohol",3
+Chronic Inflammation,Linoleic Acid,"(9Z,12Z)-Octadeca-9,12-dienoic acid","Carboxylic Acid, Alkene","Omega-6, Soybean Oil",20
+Chronic Kidney Disease,Orthophosphoric acid,Orthophosphoric acid,Inorganic Acid,"Phosphoric Acid, E338",5
+Gout,Guanylic Acid,2-amino-9-β-D-ribofuranosyl-9H-purin-6(1H)-one 5-phosphate,"Phosphate Ester, Amide, Imine","FEMA 2496, Ribonucleotides",24
+Neuro-Inflammation,Aspartame,Methyl L-α-aspartyl-L-phenylalaninate,"Ester, Amide, Carboxylic Acid","NutraSweet, Equal",21
+IBS / IBD,Sorbitol,"(2R,3R,4R,5S)-hexane-1,2,3,4,5,6-hexol",Polyol (Alcohol),"Sugar Alcohol, E420",12
