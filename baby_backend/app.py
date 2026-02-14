@@ -12,10 +12,7 @@ def get_recipes():
         data = request.json
         print("DATA RECEIVED:", data)
         service_result = process_recipe_request(data)
-        return jsonify({
-            "message": "backend working",
-            "service_output": service_result
-        })
+        return jsonify(service_result)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
