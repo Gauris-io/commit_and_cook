@@ -7,6 +7,8 @@ function RecipeForm() { // this is an entire fuction which will perform the work
   const [cuisine, setCuisine] = useState(""); // usestate("") --> initially variable = ""
   const [diet, setDiet] = useState(""); // NEW → diet state added
   const [allergies, setAllergies] = useState([]);
+  const [result, setResult] = useState(null);
+
 
   const allergyOptions = ["Dairy", "Eggs", "Nuts", "Gluten", "Soy", "Fish"];
 
@@ -91,8 +93,7 @@ function RecipeForm() { // this is an entire fuction which will perform the work
       }
 
       const data = await response.json();
-      console.log("Backend response:", data);
-
+      setResult(data);   //  this stores backend response
     } catch (error) {
       console.error("Fetch error:", error);
     }
@@ -101,6 +102,7 @@ function RecipeForm() { // this is an entire fuction which will perform the work
   return (
     <div className="container"> {/* This connects to your CSS: React → assigns class, CSS → styles that class */}
       <form onSubmit={handleSubmit}> {/* When the form is submitted --> React will call the function handleSubmit */}
+        
 
         <div className="card">
           <h3>Baby's Age (months)</h3>
@@ -190,8 +192,44 @@ function RecipeForm() { // this is an entire fuction which will perform the work
        {/* on clicking the find recipie button the console log will give message - "DIRECT CLICK WORKING" */}
 
       </form>
-    </div>
-  );
+      {result && (
+      <div className="card">
+        <h3>Baby Friendly Recipe</h3>
+
+        {result.baby_friendly_recipe?.error ? (
+          <pre style={{ whiteSpace: "pre-wrap" }}>
+            {result.baby_friendly_recipe.raw_response}
+          </pre>
+        ) : (
+          <div>
+            <h4>{result.baby_friendly_recipe?.title}</h4>
+
+            <h5>Ingredients</h5>
+            <ul>
+              {result.baby_friendly_recipe?.ingredients?.map((item, index) => (
+                <li key={index}>
+                  {item.ingredient} — {item.quantity}
+                </li>
+              ))}
+            </ul>
+
+            <h5>Instructions</h5>
+            <ol>
+              {result.baby_friendly_recipe?.instructions?.map((step, index) => (
+                <li key={index}>{step}</li>
+              ))}
+            </ol>
+
+            <p><strong>Nutrition:</strong> {result.baby_friendly_recipe?.nutrition_notes}</p>
+            <p><strong>Safety:</strong> {result.baby_friendly_recipe?.safety_notes}</p>
+          </div>
+        )}
+      </div>
+    )}
+
+  </div>
+);
+    
 }
 
 export default RecipeForm;
