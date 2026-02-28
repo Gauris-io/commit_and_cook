@@ -1,23 +1,20 @@
-import React, { useEffect } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 export default function Model(props) {
-  // Path points to your public folder
-  const { scene, animations } = useGLTF('/glbfile.glb')
-  const { actions } = useAnimations(animations, scene)
+  const group = useRef()
+  // Ensure glbfile.glb is in your public/ folder
+  const { scene } = useGLTF('/glbfile.glb')
 
-  useEffect(() => {
-    // Check console (F12) if it doesn't spin
-    console.log("Animations found:", Object.keys(actions))
-    
-    if (actions && Object.keys(actions).length > 0) {
-      // Plays the first animation found in the file
-      const firstAction = Object.values(actions)[0]
-      firstAction.play()
+  // Infinite, non-interactive code-based rotation
+  useFrame((state, delta) => {
+    if (group.current) {
+      group.current.rotation.y += delta * 0.12 
     }
-  }, [actions])
+  })
 
-  return <primitive object={scene} {...props} />
+  return <primitive ref={group} object={scene} {...props} />
 }
 
 useGLTF.preload('/glbfile.glb')
